@@ -58,13 +58,37 @@
 			children = (
 				4D36EE5126C82BFF006624D1 /* AppDelegate.swift */,
 				4D36EE5326C82BFF006624D1 /* SceneDelegate.swift */,
-				4D36EE5526C82BFF006624D1 /* ViewController.swift */,
-				4D36EE5726C82BFF006624D1 /* Main.storyboard */,
+				4D36EE6726C82CD9006624D1 /* Model */,
+				4D36EE6526C82CB8006624D1 /* Controller */,
+				4D36EE6626C82CC5006624D1 /* View */,
 				4D36EE5A26C82C00006624D1 /* Assets.xcassets */,
 				4D36EE5C26C82C00006624D1 /* LaunchScreen.storyboard */,
 				4D36EE5F26C82C00006624D1 /* Info.plist */,
 			);
 			path = "BMI Calculator";
+			sourceTree = "<group>";
+		};
+		4D36EE6526C82CB8006624D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D36EE5526C82BFF006624D1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D36EE6626C82CC5006624D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D36EE5726C82BFF006624D1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D36EE6726C82CD9006624D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T3ZC977W3;
 				INFOPLIST_FILE = "BMI Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T3ZC977W3;
 				INFOPLIST_FILE = "BMI Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
