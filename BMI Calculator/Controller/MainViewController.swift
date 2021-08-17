@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     /* Labels of the UI */
     @IBOutlet weak var heightValueLabel: UILabel!
@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     /* IBOutlet for the sliders */
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
+    
+    var calculationBrain = CalculatorBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +38,25 @@ class ViewController: UIViewController {
     @IBAction func calculatePressed(_ sender: UIButton) {
         print("The height is: \(heightSlider.value)")
         print("The weight is: \(weightSlider.value)")
+        
         /* To calculate the BMI */
-        let bmi: Float = Float(weightSlider.value) / Float(pow(heightSlider.value, 2))
+        let bmi: String = calculationBrain.getBmiAsString(height: heightSlider.value, weight: weightSlider.value)
+        
         print("BMI: \(bmi)")
+                
+        /* Let is go to the Result View Controller using goToResult identifier Segue */
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // This method be executed before to do a segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationViewController: ResultViewController = segue.destination as! ResultViewController
+            destinationViewController.bmiValue = calculationBrain.getBMIValue()
+            destinationViewController.bmiAdvice = calculationBrain.getBMIAdvice()
+            destinationViewController.colour = calculationBrain.getBMIColour()
+        }
     }
     
     /* IBAction for the weight Slider */
